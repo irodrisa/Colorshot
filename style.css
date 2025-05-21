@@ -1,14 +1,18 @@
 body {
     margin: 0;
     display: flex;
+    flex-direction: column; /* Align items vertically */
     justify-content: center;
     align-items: center;
     min-height: 100vh;
-    background-color: #f0f0f0; /* Optional: for better visibility of the upload button */
+    background-color: #f0f0f0;
+    padding-top: 50px; /* Add padding to the top of the body to prevent the upload button from being overlapped by the fixed banner. Adjust value based on banner height. */
 }
 
 #imageUpload {
     margin-bottom: 20px; /* Optional: to give some space if the image isn't loaded yet */
+    /* Ensure it's not hidden by the banner initially */
+    z-index: 1; /* Lower z-index than banner */
 }
 
 #uploadedImage {
@@ -20,4 +24,19 @@ body {
     height: 100vh;
     object-fit: contain; /* Ensures the whole image is visible, might not fill screen if aspect ratio differs */
     background-color: #000; /* Background for letterboxing if image doesn't fill screen */
+    z-index: 1; /* Ensure image is below the banner */
+}
+
+#topBanner {
+    position: fixed; /* Fixed position at the top */
+    top: 0;
+    left: 0;
+    width: 100%;
+    background-color: rgba(0, 0, 0, 0.5); /* Semi-transparent black background */
+    color: white; /* White text color */
+    text-align: center;
+    padding: 10px 0; /* 10px padding top and bottom */
+    font-size: 20px; /* Adjust font size as needed */
+    z-index: 10; /* Ensure it's above other content like the image */
+    box-sizing: border-box; /* Include padding and border in the element's total width and height */
 }
