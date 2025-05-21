@@ -1,0 +1,23 @@
+body {
+    margin: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+    background-color: #f0f0f0; /* Optional: for better visibility of the upload button */
+}
+
+#imageUpload {
+    margin-bottom: 20px; /* Optional: to give some space if the image isn't loaded yet */
+}
+
+#uploadedImage {
+    display: none; /* Hidden by default, shown when an image is uploaded */
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100vw;
+    height: 100vh;
+    object-fit: contain; /* Ensures the whole image is visible, might not fill screen if aspect ratio differs */
+    background-color: #000; /* Background for letterboxing if image doesn't fill screen */
+}
