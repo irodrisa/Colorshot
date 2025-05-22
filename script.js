@@ -17,7 +17,6 @@ document.addEventListener('DOMContentLoaded', function () {
     // Replace with the correct model identifier for Gemini 2.5 Flash if different.
     const GEMINI_API_URL = `https://generativelanguage.googleapis.com/v1beta/models/gemini-1.5-flash:generateContent?key=${GEMINI_API_KEY}`;
 
-
     imageUpload.addEventListener('change', function (event) {
         const file = event.target.files[0];
         if (file) {
